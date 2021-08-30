@@ -11,7 +11,7 @@ package controlador;
  */
 public class Cliente {
     private String pinCodigo, nombreCliente;
-    private float saldo;
+    private int saldo;
 
     public String getPinCodigo() {
         return pinCodigo;
@@ -29,15 +29,12 @@ public class Cliente {
         this.nombreCliente = nombreCliente;
     }
 
-    public float getSaldo() {
+    public int getSaldo() {
         return saldo;
     }
 
-    public void setSaldo(float saldo) {
+    public void setSaldo(int saldo) {
         this.saldo = saldo;
     }
 
-    void getSaldo(float f) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
 }

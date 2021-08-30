@@ -15,12 +15,14 @@ import controlador.Saldo_Controller;
  */
 public class Saldo extends javax.swing.JFrame {
 
+    public String sal= String.valueOf(Main.cliente.getSaldo());
     /**
      * Creates new form
      */
     public Saldo() {
         initComponents();
         this.setLocationRelativeTo(null);
+        this.txtSaldo.setText(sal);
     }
 
     /**
@@ -39,7 +41,7 @@ public class Saldo extends javax.swing.JFrame {
         jLabel15 = new javax.swing.JLabel();
         btn_regresar = new javax.swing.JButton();
         btn_salir = new javax.swing.JButton();
-        jLabel16 = new javax.swing.JLabel();
+        txtSaldo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -96,11 +98,11 @@ public class Saldo extends javax.swing.JFrame {
             }
         });
 
-        jLabel16.setFont(new java.awt.Font("Arial", 0, 36)); // NOI18N
-        jLabel16.setForeground(new java.awt.Color(51, 51, 51));
-        jLabel16.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        jLabel16.setText("0.00");
-        jLabel16.setRequestFocusEnabled(false);
+        txtSaldo.setFont(new java.awt.Font("Arial", 0, 36)); // NOI18N
+        txtSaldo.setForeground(new java.awt.Color(51, 51, 51));
+        txtSaldo.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        txtSaldo.setText("0.00");
+        txtSaldo.setRequestFocusEnabled(false);
 
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
         jPanel5.setLayout(jPanel5Layout);
@@ -120,7 +122,7 @@ public class Saldo extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(jSeparator5)
-                            .addComponent(jLabel16, javax.swing.GroupLayout.PREFERRED_SIZE, 273, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(txtSaldo, javax.swing.GroupLayout.PREFERRED_SIZE, 273, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(71, 71, 71)))
                 .addContainerGap())
             .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -134,7 +136,7 @@ public class Saldo extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jLabel13, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jLabel16, javax.swing.GroupLayout.DEFAULT_SIZE, 62, Short.MAX_VALUE))
+                    .addComponent(txtSaldo, javax.swing.GroupLayout.DEFAULT_SIZE, 62, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jSeparator5, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(112, 112, 112)
@@ -215,8 +217,8 @@ public class Saldo extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
-    private javax.swing.JLabel jLabel16;
     private javax.swing.JPanel jPanel5;
     private javax.swing.JSeparator jSeparator5;
+    private javax.swing.JLabel txtSaldo;
     // End of variables declaration//GEN-END:variables
 }

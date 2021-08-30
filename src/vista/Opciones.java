@@ -6,6 +6,7 @@
 package vista;
 
 import controlador.Deposito_Controller;
+import controlador.Main;
 import controlador.Opciones_Controller;
 import controlador.Retiro_Controller;
 import controlador.Saldo_Controller;
@@ -18,13 +19,14 @@ import static javax.swing.JOptionPane.INFORMATION_MESSAGE;
  */
 public class Opciones extends javax.swing.JFrame {
 
+    public String name = Main.cliente.getNombreCliente();
     /**
      * Creates new form
      */
     public Opciones() {
         initComponents();
         this.setLocationRelativeTo(null);
-
+        this.txt_nombreCliente.setText(name);
     }
 
     /**

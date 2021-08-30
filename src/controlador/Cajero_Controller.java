@@ -27,7 +27,7 @@ public class Cajero_Controller {
         return cliente_logged;
     }
     
-    public float consulta(Cliente cliente){
+    public static float consulta(Cliente cliente){
         return cliente.getSaldo();
     }
     

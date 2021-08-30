@@ -1,24 +1,15 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package controlador;
 
 import javax.swing.JOptionPane;
 import static javax.swing.JOptionPane.*;
 
-/**
- *
- * @author Usuario
- */
 public class Main {
+    
+    public static Cliente cliente = new Cliente();
+    
+    public static String name,pin;
+    
     public static void validarCliente(String pin){
-        Cliente cliente=new Cliente();
-        cliente.setNombreCliente("Andres");
-        cliente.setPinCodigo("1234");
-        cliente.setSaldo(20000f);
-        
         if (pin.equals(cliente.getPinCodigo())){
             JOptionPane.showMessageDialog(null, "Pin Correcto", "Acceso",INFORMATION_MESSAGE);
             System.out.println("Pass correcto " + cliente.getNombreCliente());
@@ -36,6 +27,11 @@ public class Main {
     }
     
     public static void main(String[] args){
+        cliente.setNombreCliente("Andres");
+        cliente.setPinCodigo("1234");
+        cliente.setSaldo(20000);
+        
         Inicio_Controller.mostrarInicio();
+        System.out.println(cliente.getNombreCliente());
     }
 }

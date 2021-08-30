@@ -6,6 +6,7 @@
 package vista;
 
 import controlador.Deposito_Controller;
+import controlador.Main;
 import controlador.Opciones_Controller;
 
 /**
@@ -15,12 +16,18 @@ import controlador.Opciones_Controller;
 public class Deposito extends javax.swing.JFrame {
 
     String num;
+    double res;
     /**
      * Creates new form
      */
     public Deposito() {
         initComponents();
         this.setLocationRelativeTo(null);
+    }
+    
+    public void texto(){
+        num = txtDeposito.getText();
+        System.out.println("Texto obtenido: "+num);
     }
 
     /**
@@ -343,6 +350,8 @@ public class Deposito extends javax.swing.JFrame {
 
     private void btnDepositoOKActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDepositoOKActionPerformed
         // TODO add your handling code here:
+        texto();
+        
     }//GEN-LAST:event_btnDepositoOKActionPerformed
 
     private void btn_borrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_borrarActionPerformed

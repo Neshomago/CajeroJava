@@ -15,7 +15,7 @@ public class Inicio_Modelo {
     private String pin="1234";
     
     public void validarUsuario(String pinT){
-        if (this.pin.equals(pinT)){
+        if (pin.equals(pinT)){
             Inicio_Controller.ocultarInicio();
             Opciones_Controller.mostrarOpciones();
         }
