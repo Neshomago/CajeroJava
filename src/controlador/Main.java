@@ -8,6 +8,7 @@ public class Main {
     public static Cliente cliente = new Cliente();
     
     public static String name,pin;
+    public static int val;
     
     public static void validarCliente(String pin){
         if (pin.equals(cliente.getPinCodigo())){
@@ -29,7 +30,8 @@ public class Main {
     public static void main(String[] args){
         cliente.setNombreCliente("Andres");
         cliente.setPinCodigo("1234");
-        cliente.setSaldo(20000);
+        val = 20000;
+        cliente.setSaldo(val);
         
         Inicio_Controller.mostrarInicio();
         System.out.println(cliente.getNombreCliente());

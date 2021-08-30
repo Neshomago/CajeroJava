@@ -1,16 +1,9 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package controlador;
 
+import javax.swing.JOptionPane;
+import static javax.swing.JOptionPane.*;
 import vista.Deposito;
 
-/**
- *
- * @author Usuario
- */
 public class Deposito_Controller {
     private static Deposito deposito= new Deposito();
     
@@ -20,5 +13,12 @@ public class Deposito_Controller {
     
     public static void ocultarOpciones(){
         deposito.setVisible(false);
+    }
+    
+    public static int depositoCajero(int saldo, int valor){
+        saldo = saldo + valor;
+        System.out.println("VALOR + RESTADO: "+saldo);
+        Main.cliente.setSaldo(saldo);
+        return saldo;
     }
 }

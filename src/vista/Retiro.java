@@ -9,12 +9,9 @@ import controlador.Main;
 import controlador.Opciones_Controller;
 import controlador.Retiro_Controller;
 import javax.swing.JOptionPane;
+import static javax.swing.JOptionPane.ERROR_MESSAGE;
 import static javax.swing.JOptionPane.INFORMATION_MESSAGE;
 
-/**
- *
- * @author Usuario
- */
 public class Retiro extends javax.swing.JFrame {
 
     public int saldo = Main.cliente.getSaldo();
@@ -353,12 +350,17 @@ public class Retiro extends javax.swing.JFrame {
     private void btnRetiroOKActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRetiroOKActionPerformed
         // TODO add your handling code here:
         int suma = Integer.parseInt(txtRetiro.getText());
-        System.out.println("valor a retirar "+suma+"\n En cuenta con "+saldo);
-        Retiro_Controller.retiroCajero(saldo, suma);
-        Main.cliente.setSaldo(suma);
-        JOptionPane.showMessageDialog(rootPane, "Valor de: $ "+suma+" \n Retirado exitosamente.", "Retiros", INFORMATION_MESSAGE);
-        Opciones_Controller.mostrarOpciones();
-        Retiro_Controller.ocultarOpciones();
+        if(suma <=0 || suma > saldo){
+            JOptionPane.showMessageDialog(rootPane, "¡Fondos Insuficientes!", "Retiro", ERROR_MESSAGE);
+        }else{
+            System.out.println("valor a retirar "+suma+"\n En cuenta con "+saldo);
+            int nuevoRes = Retiro_Controller.retiroCajero(saldo, suma);
+            Main.cliente.setSaldo(nuevoRes);
+            JOptionPane.showMessageDialog(rootPane, "Valor de: $ "+suma+" \n Retirado exitosamente.", "Retiros", INFORMATION_MESSAGE);
+            Opciones_Controller.mostrarOpciones();
+            this.txtRetiro.setText("");
+            Retiro_Controller.ocultarOpciones();
+        }
     }//GEN-LAST:event_btnRetiroOKActionPerformed
 
     private void btn_regresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_regresarActionPerformed

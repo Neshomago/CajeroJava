@@ -8,6 +8,8 @@ package vista;
 import controlador.Deposito_Controller;
 import controlador.Main;
 import controlador.Opciones_Controller;
+import javax.swing.JOptionPane;
+import static javax.swing.JOptionPane.INFORMATION_MESSAGE;
 
 /**
  *
@@ -23,6 +25,7 @@ public class Deposito extends javax.swing.JFrame {
     public Deposito() {
         initComponents();
         this.setLocationRelativeTo(null);
+        this.txtDeposito.setText("");
     }
     
     public void texto(){
@@ -352,6 +355,16 @@ public class Deposito extends javax.swing.JFrame {
         // TODO add your handling code here:
         texto();
         
+        int saldo = Main.cliente.getSaldo();
+        
+        int suma = Integer.parseInt(txtDeposito.getText());
+        System.out.println("valor a depositar "+suma+"\n En cuenta con "+saldo);
+        int nuevoRes = Deposito_Controller.depositoCajero(saldo, suma);
+        Main.cliente.setSaldo(nuevoRes);
+        JOptionPane.showMessageDialog(rootPane, "Valor de: $ "+suma+" \n Depósito realizad con éxito.", "Depósitos", INFORMATION_MESSAGE);
+        Opciones_Controller.mostrarOpciones();
+        this.txtDeposito.setText("");
+        Deposito_Controller.ocultarOpciones();
     }//GEN-LAST:event_btnDepositoOKActionPerformed
 
     private void btn_borrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_borrarActionPerformed

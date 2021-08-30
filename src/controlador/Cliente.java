@@ -37,4 +37,8 @@ public class Cliente {
         this.saldo = saldo;
     }
 
+    void getSaldo(float f) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
 }
